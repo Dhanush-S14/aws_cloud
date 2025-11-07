@@ -1,0 +1,32 @@
+.add-goal-btn {
+  padding: 0.25rem 1rem;
+  border-radius: 999px;
+
+  /* Make button lighter than main background (not blue) */
+  background-color: color-mix(in srgb, var(--bg), white 20%);
+  /* Fallback: semi-white if color-mix unsupported */
+  background-color: rgba(255, 255, 255, 0.15);
+
+  color: var(--button-txt);
+  border: none;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+  transition:
+    background 0.2s,
+    color 0.2s,
+    box-shadow 0.2s;
+}
+
+.add-goal-btn:hover,
+.add-goal-btn:focus {
+  background-color: color-mix(in srgb, var(--bg), white 95%);
+  color: var(--button-txt); /* Slightly darker */
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.2);
+  transform: translateY(-1px);
+}
+
+/* Active */
+.add-goal-btn:active {
+  background-color: color-mix(in srgb, var(--bg), white 35%);
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.12);
+  transform: translateY(0);
+}

@@ -1,0 +1,60 @@
+User-agent: *
+Allow: /
+
+# ============================
+# 🚫 Sensitive Directories
+# ============================
+Disallow: /admin/
+Disallow: /private/
+Disallow: /api/
+Disallow: /_next/
+Disallow: /static/
+Disallow: /server/
+Disallow: /database/
+Disallow: /config/
+Disallow: /node_modules/
+Disallow: /uploads/
+
+# ============================
+# 🚫 Prevent Duplicate Content
+# ============================
+Disallow: /*?sort=
+Disallow: /*?filter=
+Disallow: /*?ref=
+Disallow: /*?session=
+Disallow: /*?debug=
+Disallow: /*?utm_  # prevent tracking parameters from being indexed
+
+# ============================
+# ✅ Explicitly Allowed Pages
+# ============================
+Allow: /session
+Allow: /stats
+Allow: /notes
+Allow: /friends
+Allow: /settings
+Allow: /games
+Allow: /auth
+Allow: /privacy
+Allow: /about
+
+# Crawl delay (optional)
+Crawl-delay: 1
+
+# ============================
+# 🚫 Block Aggressive Bots
+# ============================
+User-agent: AhrefsBot
+Disallow: /
+
+User-agent: SemrushBot
+Disallow: /
+
+User-agent: MJ12bot
+Disallow: /
+
+User-agent: DotBot
+Disallow: /
+
+# 📌 Sitemap
+Sitemap: https://eduhaven.online/sitemap.xml

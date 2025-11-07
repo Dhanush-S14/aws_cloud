@@ -1,0 +1,243 @@
+:root {
+  --note-default: rgba(128, 128, 128, 0.15);
+  --note-red: rgba(255, 99, 71, 0.2);
+  --note-orange: rgba(255, 165, 0, 0.2);
+  --note-yellow: rgba(255, 223, 0, 0.2);
+  --note-green: rgba(50, 205, 50, 0.2);
+  --note-blue: rgba(70, 130, 180, 0.2);
+  --note-purple: rgba(138, 43, 226, 0.2);
+  --note-pink: rgba(255, 105, 180, 0.2);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  background: #f0e5e5;
+}
+
+/* TipTap Editor Styles */
+.ProseMirror {
+  outline: none;
+  font-size: 16px;
+  line-height: 1.6;
+  color: var(--txt);
+}
+
+.ProseMirror h1,
+.ProseMirror h2,
+.ProseMirror h3 {
+  font-weight: 600;
+  margin: 1.5em 0 0.5em 0;
+  color: var(--txt);
+}
+
+.ProseMirror h1 {
+  font-size: 2em;
+}
+
+.ProseMirror h2 {
+  font-size: 1.5em;
+}
+
+.ProseMirror h3 {
+  font-size: 1.25em;
+}
+
+.ProseMirror p {
+  margin: 0;
+}
+
+.ProseMirror ul,
+.ProseMirror ol {
+  padding-left: 1.5em;
+  margin: 0.5em 0;
+}
+
+.ProseMirror ul {
+  list-style-type: disc;
+}
+
+.ProseMirror ol {
+  list-style-type: decimal;
+}
+
+.ProseMirror ul li::marker,
+.ProseMirror ol li::marker {
+  color: var(--txt);
+}
+
+.ProseMirror li {
+  margin: 0.25em 0;
+}
+
+.ProseMirror blockquote {
+  border-left: 3px solid var(--btn);
+  padding-left: 1em;
+  margin: 1em 0;
+  font-style: italic;
+  color: var(--txt-dim);
+}
+
+.ProseMirror code {
+  background-color: var(--bg-sec);
+  padding: 2px 4px;
+  border-radius: 4px;
+  font-family: "Monaco", "Menlo", "Consolas", monospace;
+  font-size: 0.9em;
+}
+
+.ProseMirror pre {
+  background-color: var(--bg-sec);
+  padding: 1em;
+  border-radius: var(--radius);
+  margin: 1em 0;
+  overflow-x: auto;
+}
+
+.ProseMirror pre code {
+  background: none;
+  padding: 0;
+}
+
+.ProseMirror strong {
+  font-weight: 600;
+}
+
+.ProseMirror em {
+  font-style: italic;
+}
+
+.ProseMirror u {
+  text-decoration: underline;
+}
+
+.ProseMirror s {
+  text-decoration: line-through;
+}
+
+.ProseMirror p.is-editor-empty:first-child::before {
+  color: var(--txt-dim);
+  content: attr(data-placeholder);
+  float: left;
+  height: 0;
+  pointer-events: none;
+}
+
+.ProseMirror .task-list {
+  list-style: none;
+  padding: 0;
+}
+
+.ProseMirror ul[data-type="taskList"] li {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+/* .ProseMirror .task-list li label {
+  display: flex;
+  align-items: center; 
+} */
+
+/* .ProseMirror .task-list input[type="checkbox"] {
+  margin: 0;
+  margin-top: 4px;
+  width: 18px;
+  height: 18px;
+  cursor: pointer;
+} */
+
+.ProseMirror mark {
+  background-color: color-mix(in srgb, var(--btn) 75%, transparent);
+  border-radius: 2px;
+  padding: 0 4px;
+  color: var(--txt);
+}
+
+.ProseMirror img {
+  max-width: 100%;
+  height: auto;
+  border-radius: var(--radius);
+  margin: 8px 0;
+}
+
+.ProseMirror a {
+  color: var(--btn);
+  text-decoration: underline;
+}
+
+.ProseMirror a:hover {
+  color: var(--btn-hover);
+}
+
+.ProseMirror hr {
+  border: none;
+  border-top: 2px solid var(--txt);
+  margin: 2em 0;
+}
+
+.ProseMirror table {
+  border-collapse: collapse;
+  table-layout: fixed;
+  width: 100%;
+  margin: 1em 0;
+  border: 1px solid var(--bg-sec);
+  border-radius: var(--radius);
+  overflow: hidden;
+}
+
+.ProseMirror table td,
+.ProseMirror table th {
+  min-width: 100px;
+  border: 1px solid var(--bg-sec);
+  padding: 8px;
+  vertical-align: top;
+  box-sizing: border-box;
+  position: relative;
+}
+
+.ProseMirror table th {
+  font-weight: 600;
+  background-color: var(--bg-sec);
+}
+
+/* Hide default checkbox */
+.ProseMirror ul[data-type="taskList"] li input[type="checkbox"] {
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  width: 18px;
+  height: 18px;
+  border: 2px solid var(--txt-dim, #888);
+  border-radius: 4px;
+  cursor: pointer;
+  position: relative;
+  background: transparent;
+  transition: all 0.2s ease;
+}
+
+/* Checked state → filled box */
+.ProseMirror ul[data-type="taskList"] li input[type="checkbox"]:checked {
+  background-color: var(--btn, #2563eb); /* use your theme color */
+  border-color: var(--btn, #2563eb);
+}
+
+/* Tick mark */
+.ProseMirror ul[data-type="taskList"] li input[type="checkbox"]:checked::after {
+  content: "✓";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -55%);
+  font-size: 14px;
+  color: white;
+}
+
+.ProseMirror ul[data-type="taskList"] li label {
+  display: flex;
+  align-items: center;
+}

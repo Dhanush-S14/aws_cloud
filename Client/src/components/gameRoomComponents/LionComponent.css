@@ -1,0 +1,36 @@
+#world {
+  position: relative;
+  left: -5%;
+  top: -30%;
+  transform: scale(90%);
+}
+
+#instructions {
+  position: absolute;
+  width: 100%;
+  top: 52%;
+  right: 2%;
+  margin: auto;
+  font-weight: bold;
+  color: var(--btn-hover);
+  font-size: 1em;
+  text-transform: uppercase;
+  text-align: center;
+  user-select: none;
+}
+
+@media (min-width: 1440px) {
+  #instructions {
+    margin-top: 130px;
+  }
+}
+@media (max-width: 1440px) {
+  #instructions {
+    margin-top: 70px;
+  }
+}
+
+.lightInstructions {
+  color: var(--txt-disabled);
+  font-size: 0.75em;
+}
