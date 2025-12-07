@@ -313,7 +313,7 @@ You'll receive an email when CPU usage exceeds 80% for 5 minutes.
    - Storage location: **Create new S3 bucket**
    - S3 bucket name: `eduhaven-cloudtrail-logs-<random>`
 3. **CloudWatch Logs**:
-   - ✅ Enable CloudWatch Logs
+   - Enable CloudWatch Logs
    - Log group: `aws-cloudtrail-logs-eduhaven`
    - IAM role: Create new → `CloudTrail_CloudWatchLogs_Role`
 4. Event type: **Management events** (Read + Write)
